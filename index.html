@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+background-color:#7E99A3;
+color:black;
+
+}
+h1{
+text-align:center;
+margin-top: 150px;
+}
+p:hover{
+ font-size: 63px;
+ box-shadow: 2.5px black;
+}
+p {
+  text-align: center;
+  border:2px solid black;
+ margin-left: 200px;
+ margin-right:200px;
+ margin-top:180px;
+  font-size: 60px;
+  margin-top: 50px;
+  
+}
+</style>
+</head>
+<body>
+<h1>Counter Timer</h1>
+<p id="demo"></p>
+
+<script>
+
+var countDownDate = new Date("Sep 7, 2025 15:37:25").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
